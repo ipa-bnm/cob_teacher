@@ -1,0 +1,3 @@
+teach_in_handle_frame_id: /teach_in_handle
+camera_frame_id: /stereo/left
+scene_already_calibrated: false

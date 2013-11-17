@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="pkg_cob_teacher" default="$(find cob_teacher)"/>
+
+		<rosparam file="$(arg pkg_cob_teacher)/config/teachin_handle_config.yaml" command="load" />
+		<node pkg="cob_teacher" type="calibrate_camera_frame_server.py" name="calibrate_camera_frame_server" cwd="node" output="screen">
+			<!--rosparam file="$(arg pkg_prace_gripper_driver)/ros/config/controller_config_left.yaml" command="load" /-->
+		</node>
+
+</launch>
