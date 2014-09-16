@@ -14,8 +14,8 @@ from YamlManager import *
 
 
 availableTeachers = [StringInputTeacher, StdStringInputTeacher, FloatInputTeacher, PoseInputTeacher, 
-                     PoseTouchupTeacher, PoseTeachInHandleTeacher, 
-                     PalettePoseTeacher, IntInputTeacher]
+                     PoseTouchupTeacher, PositionTouchupTeacher, PoseTeachInHandleTeacher, 
+                     PalettePoseTeacher, IntInputTeacher, BoolInputTeacher, CamPoseTeacher]
 
 class cob_teacher_plugin(Plugin):
 
@@ -108,7 +108,7 @@ class cob_teacher_plugin(Plugin):
                     if(teacher().getName() == text):
                         print "Chosen: ", text
                         this_teacher = teacher()
-                        if this_teacher.getName() == "PoseTouchupTeacher":
+                        if this_teacher.getName() == "PoseTouchupTeacher" or this_teacher.getName() == "PositionTouchupTeacher":
                             target_frame = ""
                             for t in self.current_teacher:
                                 if t["name"] == "target_frame":
